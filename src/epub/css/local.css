@@ -55,6 +55,39 @@ section > header [epub|type~="epigraph"]{
 }
 /* End epigraphs in section headers */
 
+/* Centered dedications */
+section[epub|type~="dedication"]#dedication-1{
+	text-align: center;
+}
+
+section[epub|type~="dedication"]#dedication-1 > *{
+	display: inline-block;
+	margin: auto;
+	margin-top: 3em;
+	max-width: 80%;
+}
+
+@supports(display: flex){
+	section[epub|type~="dedication"]#dedication-1{
+		align-items: center;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: calc(98vh - 3em);
+		padding-top: 3em;
+	}
+
+	section[epub|type~="dedication"]#dedication-1 > *{
+		margin: 0;
+	}
+}
+/* End centered dedications */
+
+section[epub|type~="dedication"]#dedication-1 header{
+	margin-bottom: 1em;
+}
+
 /* Poem, song, verse */
 [epub|type~="z3998:poem"] p,
 [epub|type~="z3998:song"] p,
